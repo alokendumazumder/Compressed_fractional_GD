@@ -3,6 +3,8 @@
 ### Overview
 This repository contains the official implementation of the algorithms proposed in the paper:
 > **Fractional Gradient Descent with Matrix Stepsizes for Non-Convex Optimisation**  
+> [📄 Read the full paper on TechRxiv](https://www.techrxiv.org/users/883759/articles/1292374-fractional-gradient-descent-with-matrix-stepsizes-for-non-convex-optimisation)
+> 
 > *Authors: Alokendu Mazumder¹, Keshav Vyas², and Punit Rathore¹*  
 > *¹Robert Bosch Center for Cyber Physical Systems, Indian Institute of Science, Bengaluru*
 > *²Independent Researcher*  
@@ -84,14 +86,13 @@ The experiments are divided into two categories:
 ---
 
 ## 📈 Results
-Below is a placeholder 3×3 results grid showing sample figures from the `figures/` folder.
 
 | ![](figures/fig1.png) | ![](figures/fig2.png) | ![](figures/fig3.png) |
 |:----------------------:|:----------------------:|:----------------------:|
 | ![](figures/fig4.png) | ![](figures/fig5.png) | ![](figures/fig6.png) |
 | ![](figures/fig7.png) | ![](figures/fig8.png) | ![](figures/fig9.png) |
 
-> **Figure 1–9:** Comparative performance of CFGD and DCFGD under different sketches and step-size configurations. *(You can update these captions later.)*
+> **Figure 1–9:** Comparison of standard DCGD, DCFGD, det-CGD (ICLR 2024) with optimal diagonal stepsizes under rand-1 sketch, CFGD-1 (Ours) and CFGD-2 (Ours) with optimal diagonal stepsizes under rand-1 sketch, det-MARINA (NeurIPS 2023), DAG-GT (IEEE TAC 2024), and DMFW (IEEE/CAA Automatica SINICA 2024). 
 
 ---
 
@@ -99,24 +100,20 @@ Below is a placeholder 3×3 results grid showing sample figures from the `figure
 If you use this repository or build upon this work, please cite:
 
 ```bibtex
-@article{mazumder2025cfgd,
+@article{mazumder2025fractional,
   title={Fractional Gradient Descent with Matrix Stepsizes for Non-Convex Optimisation},
-  author={Alokendu Mazumder and Keshav Vyas and Punit Rathore},
-  journal={IEEE Transactions on Artificial Intelligence},
-  year={2025}
+  author={Mazumder, Alokendu and Vyas, Keshav and Rathore, Punit},
+  journal={Authorea Preprints},
+  year={2025},
+  publisher={Authorea}
 }
 ```
 
 ---
 
-## 🧾 License
-This repository is released under the **MIT License**. Please see the `LICENSE` file for more details.
-
----
-
 ## 🙌 Acknowledgements
-This research was conducted at the **Robert Bosch Center for Cyber-Physical Systems**, Indian Institute of Science (IISc), Bengaluru.  
-We thank the open-source community for providing supporting packages such as PyTorch, NumPy, and CVXPY.
+This research is supported by the Prime Minister's Research Fellowship.
+
 
 ---
 
