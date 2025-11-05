@@ -1,20 +1,21 @@
-# Fractional Gradient Descent with Matrix Stepsizes (CFGD)
+# Fractional Gradient Descent with Matrix Stepsizes for Non-Convex Optimization
 
 ### Overview
 This repository contains the official implementation of the algorithms proposed in the paper:
 > **Fractional Gradient Descent with Matrix Stepsizes for Non-Convex Optimisation**  
-> *Authors: Alokendu Mazumder, Keshav Vyas, and Punit Rathore*  
-> *Robert Bosch Center for Cyber Physical Systems, Indian Institute of Science, Bengaluru*  
+> *Authors: Alokendu Mazumder¹, Keshav Vyas², and Punit Rathore¹*  
+> *¹Robert Bosch Center for Cyber Physical Systems, Indian Institute of Science, Bengaluru*
+> *²Independent Researcher*  
 > *Preprint posted on TechRxiv, 2025*
 
 ---
 
 ## 🚀 Introduction
 This work introduces two algorithms:
-- **CFGD-1**
-- **CFGD-2** (also referred to as **Distributed CFGD (DCFGD)** in the distributed setting)
+- **Compressed fractional gradient descent (CFGD) in single node setting.**
+- **Distributed Compressed fractional gradient descent (DCFGD) in a distributed/federated node setting.**
 
-Both are novel extensions of fractional gradient descent (FGD), designed for non-convex and matrix-smooth optimisation problems. CFGD incorporates **matrix-valued stepsizes** and **compression mechanisms**, allowing efficient large-scale distributed training.
+Both are novel extensions of Caputo derivative based fractional gradient descent (FGD), designed for non-convex and matrix-smooth optimisation problems. CFGD/DCFGD incorporates **matrix-valued stepsizes** and **compression mechanisms**, allowing efficient large-scale distributed training.
 
 The algorithms extend standard and fractional gradient descent to the distributed and federated learning domains, showing improved convergence and communication efficiency.
 
@@ -24,11 +25,6 @@ The algorithms extend standard and fractional gradient descent to the distribute
 ```
 ├── cfgd_vs_cgd.py       # Implementation of CFGD and DC(FGD) algorithms
 ├── plot.py              # Visualization utilities for convergence and comparison
-├── experiments.py       # Experimental setup for single-node and distributed cases
-├── get_data.py          # Dataset loading and preprocessing
-├── get_scheduler.py     # Learning rate scheduler utilities
-├── models.py            # Model definitions for experiments
-├── utils.py             # Helper functions
 ├── figures/             # Folder containing all result figures (9 plots assumed)
 │   ├── fig1.png
 │   ├── fig2.png
@@ -47,8 +43,8 @@ The algorithms extend standard and fractional gradient descent to the distribute
 ## ⚙️ Algorithms
 The repository implements the following key algorithms:
 
-- **CFGD-1:** Compressed Fractional Gradient Descent with matrix stepsize D applied before sketching.
-- **CFGD-2:** Variant where sketching precedes the matrix stepsize operation.
+- **CFGD-1:** Compressed Fractional Gradient Descent with matrix stepsize D applied before compression/sketching.
+- **CFGD-2:** Variant where sketching/compression precedes the matrix stepsize operation.
 - **DCFGD-1 and DCFGD-2:** Distributed versions of CFGD-1 and CFGD-2 for federated environments.
 
 These are designed to handle both **single-node** and **multi-client distributed setups** efficiently.
@@ -60,7 +56,7 @@ These are designed to handle both **single-node** and **multi-client distributed
 - Employs **fractional-order gradients (Caputo derivative)** to accelerate convergence.
 - Incorporates **communication-efficient sketching/compression** to reduce distributed overhead.
 - Demonstrates theoretical **O(1/√T)** convergence for matrix-smooth non-convex functions.
-- Provides practical improvements in both iteration and communication complexity compared to DCGD and det-CGD.
+- Provides practical improvements in both iteration and communication complexity compared to standard DCGD, det-CGD (ICLR 2024), DAG-GT (IEEE TAC 2024), DMFW (IEEE/CAA Automatica SINICA 2024), det-MARINA (NeuRIPS 2023).
 
 ---
 
@@ -82,7 +78,7 @@ The experiments are divided into two categories:
 
 ### 2. Distributed Experiments
 - Evaluates DCFGD-1 and DCFGD-2 in federated setups.
-- Compares performance with DCGD, det-CGD, and det-MARINA.
+- Compares performance with standard DCGD, det-CGD (ICLR 2024), DAG-GT (IEEE TAC 2024), DMFW (IEEE/CAA Automatica SINICA 2024), det-MARINA (NeuRIPS 2023).
 - Shows superior communication and iteration efficiency.
 
 ---
