@@ -6,6 +6,7 @@ This repository contains the official implementation of the algorithms proposed 
 > [📄 Read the full paper on TechRxiv](https://www.techrxiv.org/users/883759/articles/1292374-fractional-gradient-descent-with-matrix-stepsizes-for-non-convex-optimisation)
 >
 > This paper is accepted at IEEE Transactions of Neural Networks and Learning Systems (IEEE TNNLS, IF: 8.9, COre: A*)
+> 
 > *Authors: Alokendu Mazumder¹, Keshav Vyas², and Punit Rathore¹*  
 > *¹Robert Bosch Center for Cyber Physical Systems, Indian Institute of Science, Bengaluru*
 > *²Independent Researcher*  
