@@ -114,7 +114,7 @@ If you use this repository or build upon this work, please cite:
 ---
 
 ## 🙌 Acknowledgements
-This research is supported by the Prime Minister's Research Fellowship.
+This research is supported by the Prime Minister's Research Fellowship, Kotak AI-ML PhD Fellowship, and SERB-SRG Grant.
 
 
 ---
